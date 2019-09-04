@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "gatsby";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import AboutCard from "../components/AboutCard"
+import headshot from '../images/Lambda-Schools---Individual-Shots-33_burned-ConvertImage.png'
 
 const About = () => (
   <Layout>
     <SEO title="about" />
-    <h1>About</h1>
-    <Link to="/">Go back to the homepage</Link>
+    <img
+      src={headshot}
+      alt='Yanrong Shot'
+      style={{width: '100%', display: 'block'}}
+    />
+    <AboutCard />
   </Layout>
 );
 
