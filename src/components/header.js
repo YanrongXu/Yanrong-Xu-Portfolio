@@ -4,7 +4,7 @@ import {useTransition} from "react-spring"
 import styled from "styled-components"
 import Hamburger from "./Hamburger"
 import Navigation from "./Navigation"
-import {Icon, white} from "../utilities"
+import {Icon, white, black} from "../utilities"
 import useOnClickOutside from '../hooks/useOnClickOutside'
 
 const Header = () => {
@@ -25,13 +25,14 @@ const Header = () => {
           <Link
             to="/"
             style={{
-              color: `#070707`,
+              color: `#fafafa`,
               textDecoration: `none`,
               display: "flex",
               alignItems: "center",
             }}
           >
-            <Icon name="NavLogo" />
+            {/*<Icon name="NavLogo" />*/}
+            YX
           </Link>
         </h1>
       </HeaderContainer>
@@ -44,7 +45,7 @@ const StyledHeader = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: ${white};
+  background-color: ${black};
   box-shadow: 0 1px 3px -3px rgba(0, 0, 0, 0.3);
   z-index: 2000;
 `
