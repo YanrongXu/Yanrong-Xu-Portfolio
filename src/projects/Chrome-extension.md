@@ -4,7 +4,7 @@ date: "2019-09-03"
 title: "Linkedin Chrome Extension"
 imgUrl: "../images/chrome.png"
 tech: ['React', 'Redux', 'Node', 'Express', 'Postgres', 'Webpack']
-links: ['https://github.com/labs12-linked-in', 'https://linkedinextension.netlify.com/']
+links: {'github': 'https://github.com/labs12-linked-in','website': 'https://linkedinextension.netlify.com/'}
 ---
 
 ![alt text](../images/chrome.png)

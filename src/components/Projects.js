@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 import {StaticQuery, graphql} from "gatsby"
-import projectImageOneSRC from '../images/tresure-hunt.png'
-import projectImageTwoSRC from '../images/chrome.png'
 
 const PROJECT_LIST_QUERY = graphql`
   query ProjectListQuery {
@@ -38,7 +36,7 @@ const Projects = () => (
           <ProjectCard
             key={edge.node.frontmatter.path}
             title={edge.node.frontmatter.title}
-            src={edge.node.frontmatter.imageUrl.childImageSharp.fluid.src}
+            src={edge.node.frontmatter.imgUrl.childImageSharp.fluid.src}
             path={edge.node.frontmatter.path}
           />
         ))}

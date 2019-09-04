@@ -81,18 +81,18 @@ export default ProjectLayout
 
 export const query = graphql`
   query ProjectQuery($slug: String!) {
-  markdownRemark(frontmatter: { path: { eq: $slug } }) {
-    html
-    frontmatter {
-      title
-      date
-      path
-      tech
-      links {
-        github
-        website
+    markdownRemark(frontmatter: { path: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+        date
+        path
+        tech
+        links {
+          github
+          website
+        }
       }
-     }
     }
   }
 `;

@@ -3,6 +3,8 @@ path: "/treasure-hunt"
 date: "2019-09-03"
 title: "Treasure Hunt"
 imgUrl: "../images/tresure-hunt.png"
+tech: ['React', 'Redux', 'Node', 'Express', 'Postgres']
+links: {'github': 'https://github.com/lambda-island', 'website': 'http://treasure-hunt.yanrongxu.com/'}
 ---
 
  ![alt text](../images/tresure-hunt.png)
