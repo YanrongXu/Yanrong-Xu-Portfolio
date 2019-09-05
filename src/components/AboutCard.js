@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import {useSpring, animated} from "react-spring"
-
 import emailIcon from '../images/icons/email-icon.svg'
 import fireIcon from '../images/icons/fire-icon.svg'
 import linkedinIcon from '../images/icons/linkedin-icon.svg'
@@ -9,7 +7,7 @@ import githubIcon from '../images/icons/github-icon.svg'
 import twitterIcon from '../images/icons/twitter-icon.svg'
 import headshot from '../images/Lambda-Schools---Individual-Shots-33_burned-ConvertImage.png'
 import {FlexContainer, Half, Heading} from '../elements';
-import {above, primary, primaryLight, darkGrey} from "../utilities"
+import {above, darkGrey} from "../utilities"
 
 const skills = [
   "JavaScript",
