@@ -11,7 +11,7 @@ const Banner = () => {
         <span className='tag'>Is a Web Developer</span>
       </Hero>
       <Link className='btn-link' to='/#projects'>
-        <CodeIcon name='code' className='btn-icon' />
+        <span>{"</> View Projects"}</span>
       </Link>
     </StyledBanner>
   )
@@ -31,7 +31,7 @@ const StyledBanner = styled.div`
   align-items: center;
   justify-content: center;
   .btn-link {
-    border: 1px solid #c4c4c4;
+    border: 1px solid ${black};
     border-radius: 4px;
     padding: 1rem 2rem;
     background: transparent;
@@ -42,13 +42,13 @@ const StyledBanner = styled.div`
     color: #1f1f1f;
     text-decoration: none;
     text-transform: uppercase;
-    font-style: italic;
     display: flex;
     align-items: center;
     justify-content: space-between;
      &:hover {
       border-color: #1f1f1f;
       color: ${primary};
+      border: 1px solid ${primary}
     }
     span {
       margin-left: 5px;
@@ -75,14 +75,13 @@ const Hero = styled.h1`
   }
   .name {
     color: ${black};
-    font-weight: 900;
-    font-style: italic;
+    font-weight: 300;
     font-size: 4.8rem;
   }
    .tag {
     color: ${primary};
     font-weight: 300;
-    font-size: 3.6rem;
+    font-size: 4rem;
     text-transform: lowercase;
   }
 `;
