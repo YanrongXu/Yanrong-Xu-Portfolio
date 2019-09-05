@@ -6,7 +6,10 @@ import {above, primary} from "../utilities"
 
 const PROJECT_LIST_QUERY = graphql`
   query ProjectListQuery {
-    allMarkdownRemark {
+    allMarkdownRemark (
+      limit: 3
+      sort: {order: DESC, fields: [frontmatter___date]}
+     ) {
       edges {
         node {
           excerpt
@@ -14,6 +17,10 @@ const PROJECT_LIST_QUERY = graphql`
             title
             path
             description
+            links {
+              github
+              website
+            }
             imgUrl {
               childImageSharp {
                 fluid(maxWidth: 956) {
@@ -44,6 +51,7 @@ const Projects = () => (
               description={edge.node.frontmatter.description}
               src={edge.node.frontmatter.imgUrl.childImageSharp.fluid.src}
               path={edge.node.frontmatter.path}
+              links={edge.node.frontmatter.links}
             />
           ))}
         </ProjectsContainer>
@@ -60,7 +68,7 @@ const ProjectsContainer = styled.div`
   ${above.md`
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 4rem;
+      grid-gap: 5rem;
   `}
   ${above.lg`
       grid-template-columns: 1fr 1fr 1fr;
