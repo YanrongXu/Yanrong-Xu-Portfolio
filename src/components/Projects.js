@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 import {StaticQuery, graphql} from "gatsby"
-import {above, primary} from "../utilities"
+import {primary} from "../utilities"
 
 const PROJECT_LIST_QUERY = graphql`
   query ProjectListQuery {
@@ -69,17 +69,7 @@ const StyledProjects = styled.section`
 
 const ProjectsContainer = styled.div`
   display: flex;
-  flex-direction: column
-  // ${above.md`
-  //     display: grid;
-  //     grid-template-columns: 1fr 1fr;
-  //     grid-gap: 5rem;
-  // `}
-  // ${above.lg`
-  //     grid-template-columns: 1fr 1fr 1fr;
-  //     grid-gap: 2rem;
-  //    
-  // `}
+  flex-direction: column;
 `;
 
 const SectionHeading = styled.h2`

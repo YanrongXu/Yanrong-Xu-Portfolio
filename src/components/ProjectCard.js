@@ -3,16 +3,12 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { above, primary, black } from "../utilities";
 
-const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 961
-
 const ProjectCard = ({ src, description, links, path, title, index, mobile }) => {
   return (
-    <StyledProjectCard mobile={mobile}>
-      {(index % 2 === 0 || screenWidth) < 960 && (
-        <ImageContainer mobile={mobile}>
-          <img src={src} alt='project' />
-        </ImageContainer>
-      )}
+    <StyledProjectCard mobile={mobile} isOdd={index % 2 !== 0}>
+      <ImageContainer mobile={mobile} isOdd={index % 2 !== 0}>
+        <img src={src} alt='project' />
+      </ImageContainer>
       <ContentContainer mobile={mobile}>
         <ProjectCardHeading>{title}</ProjectCardHeading>
         <p>{description}</p>
@@ -26,11 +22,6 @@ const ProjectCard = ({ src, description, links, path, title, index, mobile }) =>
           </Button>
         </ButtonContainer>
       </ContentContainer>
-      {index % 2 !== 0 && screenWidth > 960 && (
-        <ImageContainer mobile={mobile}>
-          <img src={src} alt='project' />
-        </ImageContainer>
-      )}
     </StyledProjectCard>
   );
 };
@@ -55,6 +46,10 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  ${above.lg`
+    grid-column-start: ${({ isOdd }) => (isOdd ? 2 : 1)};
+    grid-column-end: ${({ isOdd }) => (isOdd ? 3 : 2)};
+  `}
   img {
     max-height: ${({ mobile }) => (mobile ? "500px" : "auto")};
     width: ${({ mobile }) => (mobile ? "auto" : "100%")};
@@ -68,6 +63,9 @@ const ContentContainer = styled.div`
       align-items: center;
       flex-direction: column;
       justify-content: center;
+      grid-column-start: ${({ isOdd }) => (isOdd ? 1 : 2)};
+      grid-column-end: ${({ isOdd }) => (isOdd ? 2 : 3)};
+      grid-row-start: 1;
    `}
 `;
 
