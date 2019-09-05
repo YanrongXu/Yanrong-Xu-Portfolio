@@ -1,23 +1,34 @@
+
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { above, primary, black } from "../utilities";
 
-const ProjectCard = ({ src, description, links, path, title, index, mobile }) => {
+const ProjectCard = ({
+                       description,
+                       index,
+                       links,
+                       mobile,
+                       path,
+                       src,
+                       title,
+                     }) => {
   return (
     <StyledProjectCard mobile={mobile} isOdd={index % 2 !== 0}>
       <ImageContainer mobile={mobile} isOdd={index % 2 !== 0}>
-        <img src={src} alt='project' />
+        <img src={src} alt="project" />
       </ImageContainer>
-      <ContentContainer mobile={mobile}>
+
+      <ContentContainer mobile={mobile} isOdd={index % 2 !== 0}>
         <ProjectCardHeading>{title}</ProjectCardHeading>
+
         <p>{description}</p>
         <StyledLink to={`/projects${path}`}>Read more...</StyledLink>
         <ButtonContainer>
-          <Button href={links.website} target='_blank'>
+          <Button href={links.website} target="_blank">
             SITE
           </Button>
-          <Button href={links.github} target='_blank'>
+          <Button href={links.github} target="_blank">
             GITHUB
           </Button>
         </ButtonContainer>
@@ -28,6 +39,7 @@ const ProjectCard = ({ src, description, links, path, title, index, mobile }) =>
 
 const StyledProjectCard = styled.div`
   width: 100%;
+  margin: 0 auto;
   margin-bottom: 5rem;
   color: ${black};
   ${above.lg`
@@ -35,7 +47,7 @@ const StyledProjectCard = styled.div`
     grid-template-columns: 1fr 1fr;
     width: ${({ mobile }) => (mobile ? "75%" : "100%")};
   `}
-   p {
+  p {
     margin-bottom: 1rem;
   }
 `;
@@ -104,7 +116,7 @@ const Button = styled.a`
   color: ${black};
   text-decoration: none;
   text-transform: uppercase;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   &:visited {
