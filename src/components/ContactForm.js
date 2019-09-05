@@ -1,72 +1,71 @@
 import React, { useState } from "react";
-import { animated, useSpring} from "react-spring"
+import { animated, useSpring } from "react-spring";
 import styled from "styled-components";
 import { black, lightGrey, secondary } from "../utilities";
-import ContactFormGroup from './ContactFormGroup'
+import ContactFormGroup from "./ContactFormGroup";
 
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
+    .join("&");
+};
 
 const ContactForm = () => {
   const [formValues, setFormValues] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
-  const [submitted, setSubmitted] = useState(false)
-  const [message, setMessage] = useState({type: '', message: ''})
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState({ type: "", message: "" });
 
   const toggleSubmitMessage = (type, message) => {
-    setMessage({type, message})
+    setMessage({ type, message });
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000)
-  }
+    setTimeout(() => setSubmitted(false), 3000);
+  };
 
+  // alert animation shit
   const showAlert = useSpring({
-    config: {mass: 5, tension: 2000, friction: 200},
+    config: { mass: 5, tension: 2000, friction: 200 },
     opacity: submitted ? 1 : 0,
     x: submitted ? 0 : 20,
     height: submitted ? 35 : 0,
     from: { opacity: 0, x: 20, height: 0 },
-  })
+  });
 
   const handleFormSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
     if (
       !formValues.name.length ||
       !formValues.email.length ||
       !formValues.message.length
     ) {
-      toggleSubmitMessage("failure", "Please fill out every field!")
+      toggleSubmitMessage("failure", "Please fill out every field!");
     } else {
-
-      fetch('/', {
-        method: 'POST',
+      fetch("/", {
+        method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formValues }),
       })
         .then(() => {
-          setFormValues({ name: '', email: '', message: '' })
-          toggleSubmitMessage()
+          setFormValues({ name: "", email: "", message: "" });
+          toggleSubmitMessage("success", "Thank you for reaching out!");
         })
-        .catch(error => alert(error))
+        .catch(error => alert(error));
     }
-  }
+  };
 
   const handleInputChange = e =>
-    setFormValues({...formValues, [e.target.name]: e.target.value })
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
 
   return (
-    <div>
+    <>
       <StyledForm
         onSubmit={handleFormSubmit}
-        data-netlify='true'
-        method='post'
-        name='contact'
+        data-netlify="true"
+        method="post"
+        name="contact"
         data-netlify-honeypot="bot-field"
       >
         <AlertContainer>
@@ -84,27 +83,32 @@ const ContactForm = () => {
           </AnimatedAlert>
         </AlertContainer>
         <ContactFormGroup
-          inputName={formValues.name}
-          label='name:'
+          inputValue={formValues.name}
+          inputName="name"
+          label="name:"
           handleInputChange={handleInputChange}
         />
         <ContactFormGroup
-          inputName={formValues.email}
-          label='email:'
+          inputValue={formValues.email}
+          inputName="email"
+          label="email:"
           handleInputChange={handleInputChange}
         />
         <ContactFormGroup
-          inputName={formValues.message}
-          label='message:'
+          inputValue={formValues.message}
+          inputName="message"
+          label="message:"
           handleInputChange={handleInputChange}
+          textArea={true}
         />
         <input type="hidden" name="bot-field" />
-        <input type='hidden' name='form-name' value='contact' />
+        <input type="hidden" name="form-name" value="contact" />
         <FormButton>Send</FormButton>
       </StyledForm>
-    </div>
-  )
-}
+      {/* <button onClick={() => setSubmitted(!submitted)}>Toggle</button> */}
+    </>
+  );
+};
 
 const StyledForm = styled.form`
   display: flex;
