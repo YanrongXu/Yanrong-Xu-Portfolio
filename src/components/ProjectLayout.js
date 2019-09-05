@@ -11,6 +11,14 @@ const ProjectLayout = ({data}) => {
     <Layout>
       <Container>
         <ProjectHeading>{data.markdownRemark.frontmatter.title}</ProjectHeading>
+        <ProjectImgContainer mobile={data.markdownRemark.frontmatter.mobile}>
+          <img
+            src={
+              data.markdownRemark.frontmatter.imgUrl.childImageSharp.fluid.src
+            }
+            alt="project image"
+          />
+        </ProjectImgContainer>
         <Markdown
           className='markdown'
           dangerouslySetInnerHTML={{
@@ -41,6 +49,20 @@ const ProjectHeading = styled.h1`
   font-weight: 300;
 `;
 
+const ProjectImgContainer = styled.div`
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  img {
+    height: ${({ mobile }) => (mobile ? "500px !important" : "")};
+    width: ${({ mobile }) => (mobile ? "auto!important" : "100%")};
+  }
+`;
+
 const Markdown = styled.div`
   width: 880px;
   margin: 0 auto;
@@ -55,7 +77,7 @@ const Markdown = styled.div`
   .gatsby-resp-image-image,
   .gatsby-resp-image-background-image {
     margin: 0 auto;
-    // height: ${({ mobile }) => (mobile ? "500px !important" : "")};
+    height: ${({ mobile }) => (mobile ? "500px !important" : "")};
     width: ${({ mobile }) => (mobile ? "auto!important" : "100%")};
     // padding-bottom: ${({ mobile }) => (mobile ? "0px !important" : "0")};
     /* left: ${({ mobile }) => (mobile ? "35% !important" : "200px")}; */

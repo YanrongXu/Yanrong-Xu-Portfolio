@@ -7,9 +7,14 @@ tech: ['React', 'Redux', 'Node', 'Express', 'Postgres']
 links: {'github': 'https://github.com/lambda-island', 'website': 'http://treasure-hunt.yanrongxu.com/'}
 description: 'Treasure Hunt is a MUD of running around random run to find the way out and treasure'
 mobile: false
+imgUrls:
+    [
+       "../images/tresure-hunt.png",
+       '../images/chrome.png'
+    ]
 ---
 
- ![alt text](../images/tresure-hunt.png)
+
 
  Aside from coding, I spend a night thinking about play a game that can walk around the a mystery room.
  After realizing there is no good way to build a game like this. I went away to build one of my own.
