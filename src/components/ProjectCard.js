@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { above, primary, black } from "../utilities";
 
-const screenWidth = window.innerWidth
+const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 961
 
 const ProjectCard = ({ src, description, links, path, title, index, mobile }) => {
   return (
