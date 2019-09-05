@@ -3,15 +3,12 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { primary, black } from "../utilities";
 
-const ProjectCard = ({ src, title, path }) => {
+const ProjectCard = ({ src, description, path, title }) => {
   return (
     <StyledProjectCard>
       <img src={src} alt="project" />
       <ProjectCardHeading>{title}</ProjectCardHeading>
-      <p>
-        Aside from coding, I read a ton of about in computer science and doing code challenge.
-        After realizing that there is..
-      </p>
+      <p>{description}</p>
       <Link to={`/project${path}`}>See more...</Link>
     </StyledProjectCard>
   );
