@@ -6,6 +6,7 @@ imgUrl: "../images/chrome.png"
 tech: ['React', 'Redux', 'Node', 'Express', 'Postgres', 'Webpack']
 links: {'github': 'https://github.com/labs12-linked-in','website': 'https://linkedinextension.netlify.com/'}
 description: 'Linkedin Chrome Extension is a chrome app that help recruiter find the best applicants for the company'
+mobile: false
 ---
 
 ![alt text](../images/chrome.png)

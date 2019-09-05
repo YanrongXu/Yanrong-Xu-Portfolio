@@ -6,6 +6,7 @@ imgUrl: "../images/tresure-hunt.png"
 tech: ['React', 'Redux', 'Node', 'Express', 'Postgres']
 links: {'github': 'https://github.com/lambda-island', 'website': 'http://treasure-hunt.yanrongxu.com/'}
 description: 'Treasure Hunt is a MUD of running around random run to find the way out and treasure'
+mobile: false
 ---
 
  ![alt text](../images/tresure-hunt.png)

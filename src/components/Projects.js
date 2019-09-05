@@ -17,6 +17,7 @@ const PROJECT_LIST_QUERY = graphql`
             title
             path
             description
+            mobile
             links {
               github
               website
@@ -44,7 +45,7 @@ const Projects = () => (
           <span>my featured</span>Projects
         </SectionHeading>
         <ProjectsContainer>
-          {allMarkdownRemark.edges.map(edge => (
+          {allMarkdownRemark.edges.map((edge, index) => (
             <ProjectCard
               key={edge.node.frontmatter.path}
               title={edge.node.frontmatter.title}
@@ -52,6 +53,8 @@ const Projects = () => (
               src={edge.node.frontmatter.imgUrl.childImageSharp.fluid.src}
               path={edge.node.frontmatter.path}
               links={edge.node.frontmatter.links}
+              index={index}
+              mobile={edge.node.frontmatter.mobile}
             />
           ))}
         </ProjectsContainer>
@@ -65,16 +68,18 @@ const StyledProjects = styled.section`
 `;
 
 const ProjectsContainer = styled.div`
-  ${above.md`
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 5rem;
-  `}
-  ${above.lg`
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 2rem;
-      
-  `}
+  display: flex;
+  flex-direction: column
+  // ${above.md`
+  //     display: grid;
+  //     grid-template-columns: 1fr 1fr;
+  //     grid-gap: 5rem;
+  // `}
+  // ${above.lg`
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //     grid-gap: 2rem;
+  //    
+  // `}
 `;
 
 const SectionHeading = styled.h2`

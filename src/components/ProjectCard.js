@@ -1,24 +1,35 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { primary, black } from "../utilities";
+import { above, primary, black } from "../utilities";
 
-const ProjectCard = ({ src, description, links, path, title }) => {
+const screenWidth = window.innerWidth
+
+const ProjectCard = ({ src, description, links, path, title, index, mobile }) => {
   return (
-    <StyledProjectCard>
-      <img src={src} alt="project" />
-      <ProjectCardHeading>{title}</ProjectCardHeading>
-      <ButtonContainer>
-        {/*<Button>More</Button>*/}
-        <Button href={links.website} target='_blank'>
-          SITE
-        </Button>
-        <Button href={links.github} target='_blank'>
-          GITHUB
-        </Button>
-      </ButtonContainer>
-      <p>{description}</p>
-      <StyledLink to={`/project${path}`}>Read more...</StyledLink>
+    <StyledProjectCard mobile={mobile}>
+      {(index % 2 === 0 || screenWidth) < 960 && (
+        <ImageContainer mobile={mobile}>
+          <img src={src} alt='project' />
+        </ImageContainer>
+      )}
+      <ContentContainer mobile={mobile}>
+        <ProjectCardHeading>{title}</ProjectCardHeading>
+        <p>{description}</p>
+        <ButtonContainer>
+          <Button href={links.website} target='_blank'>
+            SITE
+          </Button>
+          <Button href={links.github} target='_blank'>
+            GITHUB
+          </Button>
+        </ButtonContainer>
+      </ContentContainer>
+      {index % 2 !== 0 && screenWidth > 960 && (
+        <ImageContainer mobile={mobile}>
+          <img src={src} alt='project' />
+        </ImageContainer>
+      )}
     </StyledProjectCard>
   );
 };
@@ -27,13 +38,36 @@ const StyledProjectCard = styled.div`
   width: 100%;
   margin-bottom: 5rem;
   color: ${black};
-  img {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+  ${above.lg`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: ${({ mobile }) => (mobile ? "75%" : "100%")};
+  `}
    p {
     margin-bottom: 1rem;
   }
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  img {
+    max-height: ${({ mobile }) => (mobile ? "500px" : "auto")};
+    width: ${({ mobile }) => (mobile ? "auto" : "100%")};
+  }
+`;
+
+const ContentContainer = styled.div`
+  ${above.lg`
+      padding: ${({ mobile }) => (mobile ? "0 5.25rem" : "0 13rem")};
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+   `}
 `;
 
 const StyledLink = styled(Link)`
@@ -56,7 +90,7 @@ const ButtonContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
-  margin-bottom: 2rem;
+  margin-top: 5rem;
 `;
 
 const Button = styled.a`

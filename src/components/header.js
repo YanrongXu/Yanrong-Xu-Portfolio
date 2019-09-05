@@ -34,7 +34,7 @@ const Header = () => {
             {/*<Icon name="NavLogo" />*/}
             {/*YX*/}
             <img
-              style={{height: '35px', width: '35px'}}
+              style={{height: '35px'}}
               src={require('../images/Logo.png')}
               alt='logo'
             />
