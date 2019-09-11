@@ -12,9 +12,9 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Container>
       <Banner />
-      <Projects />
+      <AboutPage />
     </Container>
-    <AboutPage />
+    <Projects />
     <Contact />
   </Layout>
 )

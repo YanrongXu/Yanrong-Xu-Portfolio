@@ -8,8 +8,8 @@ const HorizontalNavigation = ({ style }) => {
   return (
     <StyledNav style={style}>
       <Link to="/">Home</Link>
-      <Link to="/#projects">Projects</Link>
       <Link to="/#about">About</Link>
+      <Link to="/#projects">Projects</Link>
       <Link to="/#contact">Contact</Link>
     </StyledNav>
   );
