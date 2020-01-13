@@ -53,11 +53,11 @@ const Header = () => {
           >
             {/*<Icon name="NavLogo" />*/}
             {/*YX*/}
-            <img
+            {/* <img
               style={{height: '35px'}}
               src={require('../images/Logo.png')}
               alt='logo'
-            />
+            /> */}
           </Link>
         </h1>
         {transitions.map(
