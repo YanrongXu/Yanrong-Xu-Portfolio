@@ -70,7 +70,7 @@ const Header = () => {
 const StyledHeader = styled.header`
   height: 50px;
   width: 100%;
-  position: fixed;
+  position: flex;
   top: 0;
   background-color: ${black};
   box-shadow: 0 1px 3px -3px rgba(0, 0, 0, 0.3);
