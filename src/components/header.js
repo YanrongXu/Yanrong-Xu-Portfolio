@@ -51,8 +51,6 @@ const Header = () => {
               alignItems: "center",
             }}
           >
-            {/*<Icon name="NavLogo" />*/}
-            {/*YX*/}
             {/* <img
               style={{height: '35px'}}
               src={require('../images/Logo.png')}

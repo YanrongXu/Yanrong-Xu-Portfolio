@@ -17,7 +17,9 @@ const HorizontalNavigation = ({ style }) => {
 
 const StyledNav = styled(animated.nav)`
   display: flex;
+  width: 100%;
    a {
+    width: 100%;
     color: ${white};
     font-weight: 300;
     text-transform: uppercase;
