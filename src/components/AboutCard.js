@@ -92,7 +92,7 @@ const AboutPage = () => {
 const AboutContainer = styled(FlexContainer)`
   flex-wrap: wrap;
   ${above.lg`
-    height: calc(100vh - 50px);
+    height: calc(100vh - 400px);
   `}
 `;
 
