@@ -4,8 +4,8 @@ import styled from "styled-components"
 import {useTrail, animated, useSpring} from "react-spring"
 import {black, primary} from "../utilities"
 
-const items = ['Yanrong Xu', 'Is a Web Developer.']
-const classes = ['name', 'tag']
+const items = ['Yanrong Xu', 'Is a Software Developer.', 'Experience in HTML, JavaScrpit, React, Node.js and Python.']
+const classes = ['name', 'tag', 'exp']
 const config = {mass: 5, tension: 2000, friction: 200}
 
 const Banner = () => {
@@ -41,6 +41,7 @@ const Banner = () => {
           </AnimatedTitleContainer>
         ))}
       </Hero>
+
       <AnimatedLink style={fade} className='btn-link' to='/#projects'>
         <animated.span style={fade}>{'</> View Projects'}</animated.span>
       </AnimatedLink>
@@ -100,14 +101,14 @@ const StyledBanner = styled.div`
 
 const Hero = styled.h1`
   width: 333px;
-  height: 193px;
+  height: 700px;
   position: relative;
   /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 5rem;
-  height: 120px;
+  height: 500px;
   overflow: hidden;
   .name,
   .tag {
@@ -127,6 +128,11 @@ const Hero = styled.h1`
     font-weight: 300;
     font-size: 4rem;
     text-transform: lowercase;
+  }
+  .exp {
+    color: purple;
+    font-weight: 300;
+    font-size: 2.5rem;
   }
 `;
 

@@ -149,7 +149,8 @@ body {
   background: #fafafa;
   /* margin-top: 50px; */
   /* margin-top: 50px; */
-  /* margin: auto */
+  margin: auto;
+  max-width: 1500px;
 }
 
 .markdown p,
