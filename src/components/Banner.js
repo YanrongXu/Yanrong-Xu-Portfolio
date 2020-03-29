@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {useTrail, animated, useSpring} from "react-spring"
 import {black, primary} from "../utilities"
 
-const items = ['Yanrong Xu', 'Is a Software Developer.', 'Experience in HTML, JavaScrpit, React, Node.js and Python.']
+const items = ['Yanrong Xu', 'Is a Software Developer.', 'Experience in HTML, JavaScript, React, Node.js and Python.']
 const classes = ['name', 'tag', 'exp']
 const config = {mass: 5, tension: 2000, friction: 200}
 
@@ -130,7 +130,7 @@ const Hero = styled.h1`
     text-transform: lowercase;
   }
   .exp {
-    color: purple;
+    color: ${black};
     font-weight: 300;
     font-size: 2.5rem;
   }
