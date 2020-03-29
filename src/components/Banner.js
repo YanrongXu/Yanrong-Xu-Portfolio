@@ -42,7 +42,7 @@ const Banner = () => {
         ))}
       </Hero>
 
-      <AnimatedLink style={fade} className='btn-link' to='/#projects'>
+      <AnimatedLink style={fade} className='btn-link' to='#projects'>
         <animated.span style={fade}>{'</> View Projects'}</animated.span>
       </AnimatedLink>
       {/* <button onClick={() => set(!toggle)}>Toggle</button> */}
