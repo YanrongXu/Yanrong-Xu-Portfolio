@@ -45,6 +45,10 @@ const Banner = () => {
       <AnimatedLink style={fade} className='btn-link' to='#projects'>
         <animated.span style={fade}>{'</> View Projects'}</animated.span>
       </AnimatedLink>
+      <a style={fade} className='btn-link' href='https://github.com/YanrongXu' target='_blank'>
+        <animated.span style={fade} >{'</> View Github'}</animated.span>
+      </a>
+      
       {/* <button onClick={() => set(!toggle)}>Toggle</button> */}
     </StyledBanner>
   )
@@ -74,6 +78,7 @@ const StyledBanner = styled.div`
   align-items: center;
   justify-content: center;
   .btn-link {
+    margin-top: 10px;
     border: 1px solid ${black};
     border-radius: 4px;
     padding: 1rem 2rem;
