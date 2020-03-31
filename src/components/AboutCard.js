@@ -39,7 +39,7 @@ const AboutPage = () => {
               fontSize: '1.8rem'
             }}
           >
-            My name is Yanrong Xu, and I am a full-stack developer from Fort Lauderdale, Florida. I started my journey as a developer in the fall of 2017. Ever since starting my development journey, I have fallen more in love with the process. I love Javascript and learn more about it every day. I also know HTML, CSS, LESS, and Python. And like using a framework like React. {" "}
+            My name is Yanrong Xu, and I am a full-stack developer from Fort Lauderdale, Florida. I started my journey as a developer in the fall of 2017, and every day since then, I have fallen more and more in love with the process. I am most passionate about Javascript and am constantly looking for new ways to expand my JavaScript knowledge and mastery. I work in HTML, CSS, LESS, and Python, am most experienced with the React framework but a quick study in all JS based frameworks! {" "}
           </p>
           <FlexContainer>
             <Half>
@@ -92,7 +92,7 @@ const AboutPage = () => {
 const AboutContainer = styled(FlexContainer)`
   flex-wrap: wrap;
   ${above.lg`
-    height: calc(100vh - 400px);
+    height: 900px;
   `}
 `;
 

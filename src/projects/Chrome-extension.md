@@ -5,7 +5,7 @@ title: "Linkedin Chrome Extension"
 imgUrl: "../images/chrome.png"
 tech: ['React', 'Redux', 'Node', 'Express', 'Postgres', 'Webpack']
 links: {'github': 'https://github.com/labs12-linked-in','website': 'https://linkedinextension.netlify.com/'}
-description: 'Linkedin Chrome Extension is an app that help recruiter find the best candidates for the company.'
+description: 'Linkedin Chrome Extension is an app that helps recruiter find the best candidates for their company.'
 mobile: false
 imgUrls:
     [
@@ -14,6 +14,4 @@ imgUrls:
     ]
 ---
  
-When I talk to a recruiter, I find out the most of the recruiter doesn't have a handy tool to organize the applicants and send it within the organizations. So I create this app to help recruiters. This tool was a chrome extension. 
-
-Place the quantify applicants to the right department in the company. 
+When I talked to recruiters during my own job search, I quickly found that most recruiters don't have a tool to organize and communicate about applicants within their organization. I created this app to fill that need for recruiters, it is a Chrome extension that allows users to place quality applicants in the right departments' hiring pipeline. Builtin React/Redux, Node.js, Express, Postgres, and Webpack.
